@@ -52,4 +52,37 @@ async function displayCryptoData() {
 // Call the function to display data
 displayCryptoData();
 
+// Function to display global data
+async function displayGlobalData() {
+    try {
+        const globalData = await fetchGlobalData();
+        const globalDataContainer = document.getElementById('global-data-container');
 
+        // Clear previous data
+        globalDataContainer.innerHTML = '';
+
+        // Display global data
+        const marketData = globalData.data.market_data;
+        const marketCap = marketData.total_market_cap.usd;
+        const totalVolume = marketData.total_volume.usd;
+        const dominanceBTC = marketData.market_cap_percentage.btc;
+
+        const marketCapElement = document.createElement('div');
+        marketCapElement.textContent = `Total Market Cap (USD): ${marketCap}`;
+        globalDataContainer.appendChild(marketCapElement);
+
+        const totalVolumeElement = document.createElement('div');
+        totalVolumeElement.textContent = `Total 24h Volume (USD): ${totalVolume}`;
+        globalDataContainer.appendChild(totalVolumeElement);
+
+        const dominanceBTCElement = document.createElement('div');
+        dominanceBTCElement.textContent = `BTC Dominance: ${dominanceBTC}%`;
+        globalDataContainer.appendChild(dominanceBTCElement);
+    } catch (error) {
+        console.error('Error displaying global data:', error);
+        // Handle error if needed
+    }
+}
+
+// Call the function to display global data
+displayGlobalData();
