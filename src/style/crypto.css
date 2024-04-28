@@ -1,0 +1,56 @@
+Style for the container
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#global-data-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.global-data-element {
+  margin-bottom: 10px;
+}
+
+.global-data-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.global-data-value {
+  color: #007bff; 
+}
+
