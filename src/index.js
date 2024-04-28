@@ -18,8 +18,9 @@ async function displayCryptoData() {
         thead.innerHTML = `
             <tr>
                 <th>Name</th>
-                <th>Current Price</th>
                 <th>Symbol</th>
+                <th>Current Price (USD)</th>
+                <th>Market Cap (USD)</th>
             </tr>
         `;
         table.appendChild(thead);
@@ -30,8 +31,9 @@ async function displayCryptoData() {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${crypto.name}</td>
-                <td>${crypto.current_price}</td>
                 <td>${crypto.symbol}</td>
+                <td>${crypto.current_price}</td>
+                <td>${crypto.market_cap}</td>
             `;
             tbody.appendChild(row);
         });
