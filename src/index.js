@@ -12,7 +12,7 @@ async function displayCryptoData() {
 
         // Create table
         const table = document.createElement('table');
-        table.classList.add('table');
+        table.classList.add('table', 'table-success', 'table-striped');
 
         // Create table head
         const thead = document.createElement('thead');
