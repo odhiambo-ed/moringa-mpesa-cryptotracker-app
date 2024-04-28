@@ -80,7 +80,6 @@ async function displayGlobalData() {
         globalDataContainer.appendChild(dominanceBTCElement);
     } catch (error) {
         console.error('Error displaying global data:', error);
-        // Handle error if needed
     }
 }
 
