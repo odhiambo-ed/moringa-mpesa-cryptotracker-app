@@ -5,14 +5,12 @@ Style for the container
   padding: 20px;
 }
 
-/* Style for the table */
 .table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-/* Style for table headings */
 th {
   background-color: #f2f2f2;
   border: 1px solid #ddd;
@@ -20,20 +18,39 @@ th {
   text-align: left;
 }
 
-/* Style for table rows */
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-/* Style for table data */
 td {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-/* Style for error message */
 #error-message {
   color: red;
   font-weight: bold;
   margin-top: 20px;
 }
+
+#global-data-container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.global-data-element {
+  margin-bottom: 10px;
+}
+
+.global-data-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.global-data-value {
+  color: #007bff; 
+}
+
