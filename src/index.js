@@ -52,33 +52,47 @@ async function displayCryptoData() {
 // Call the function to display data
 displayCryptoData();
 
-// Function to display global data
+
+//Display Global Data
 async function displayGlobalData() {
     try {
         const globalData = await fetchGlobalData();
-        console.log(globalData)
         const globalDataContainer = document.getElementById('global-data-container');
 
         // Clear previous data
         globalDataContainer.innerHTML = '';
 
-        // Display global data
-        const marketData = globalData.data.market_data;
-        const marketCap = marketData.total_market_cap.usd;
-        const totalVolume = marketData.total_volume.usd;
-        const dominanceBTC = marketData.market_cap_percentage.btc;
+        // Display global data if it exists
+        if (globalData && globalData.data && globalData.data.market_data) {
+            const marketData = globalData.data.market_data;
 
-        const marketCapElement = document.createElement('div');
-        marketCapElement.textContent = `Total Market Cap (USD): ${marketCap}`;
-        globalDataContainer.appendChild(marketCapElement);
+            // Check if total_market_cap property exists before accessing it
+            if (marketData.total_market_cap && marketData.total_market_cap.usd) {
+                const marketCap = marketData.total_market_cap.usd;
+                const marketCapElement = document.createElement('div');
+                marketCapElement.textContent = `Total Market Cap (USD): ${marketCap}`;
+                globalDataContainer.appendChild(marketCapElement);
+            }
 
-        const totalVolumeElement = document.createElement('div');
-        totalVolumeElement.textContent = `Total 24h Volume (USD): ${totalVolume}`;
-        globalDataContainer.appendChild(totalVolumeElement);
+            // Check if total_volume property exists before accessing it
+            if (marketData.total_volume && marketData.total_volume.usd) {
+                const totalVolume = marketData.total_volume.usd;
+                const totalVolumeElement = document.createElement('div');
+                totalVolumeElement.textContent = `Total 24h Volume (USD): ${totalVolume}`;
+                globalDataContainer.appendChild(totalVolumeElement);
+            }
 
-        const dominanceBTCElement = document.createElement('div');
-        dominanceBTCElement.textContent = `BTC Dominance: ${dominanceBTC}%`;
-        globalDataContainer.appendChild(dominanceBTCElement);
+            // Check if market_cap_percentage property exists before accessing it
+            if (marketData.market_cap_percentage && marketData.market_cap_percentage.btc) {
+                const dominanceBTC = marketData.market_cap_percentage.btc;
+                const dominanceBTCElement = document.createElement('div');
+                dominanceBTCElement.textContent = `BTC Dominance: ${dominanceBTC}%`;
+                globalDataContainer.appendChild(dominanceBTCElement);
+            }
+        } else {
+            // Display an error message if global data is missing
+            console.error('Error displaying global data: Global data is missing');
+        }
     } catch (error) {
         console.error('Error displaying global data:', error);
     }
