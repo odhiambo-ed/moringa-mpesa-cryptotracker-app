@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/crypto.css'
 import { fetchCryptoData } from './api/coinGeckoAPI';
+import { fetchGlobalData } from './api/globalData';
 
 async function displayCryptoData() {
     try {
@@ -50,3 +51,5 @@ async function displayCryptoData() {
 
 // Call the function to display data
 displayCryptoData();
+
+
