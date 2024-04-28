@@ -56,6 +56,7 @@ displayCryptoData();
 async function displayGlobalData() {
     try {
         const globalData = await fetchGlobalData();
+        console.log(globalData)
         const globalDataContainer = document.getElementById('global-data-container');
 
         // Clear previous data
