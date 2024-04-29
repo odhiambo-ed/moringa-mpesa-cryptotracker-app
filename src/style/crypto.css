@@ -27,6 +27,10 @@ td {
   padding: 8px;
 }
 
+td img {
+  width: 20px;
+}
+
 #error-message {
   color: red;
   font-weight: bold;

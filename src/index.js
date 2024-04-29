@@ -19,6 +19,7 @@ async function displayCryptoData() {
         const thead = document.createElement('thead');
         thead.innerHTML = `
             <tr>
+                <th>.</th>
                 <th>Name</th>
                 <th>Symbol</th>
                 <th>Current Price (USD)</th>
@@ -32,6 +33,7 @@ async function displayCryptoData() {
         data.forEach(crypto => {
             const row = document.createElement('tr');
             row.innerHTML = `
+                <td><img src="${crypto.image}" alt=""></td>
                 <td>${crypto.name}</td>
                 <td>${crypto.symbol}</td>
                 <td>${crypto.current_price}</td>
@@ -40,6 +42,8 @@ async function displayCryptoData() {
             tbody.appendChild(row);
         });
         table.appendChild(tbody);
+
+        console.log(tbody);
 
         // Append table to the container
         cryptoList.appendChild(table);
