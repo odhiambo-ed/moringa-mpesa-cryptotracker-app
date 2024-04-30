@@ -17,7 +17,7 @@
 ![HTML5](https://icongr.am/devicon/html5-original.svg?size=80&color=currentColor)
 ![CSS3](https://icongr.am/devicon/css3-original.svg?size=80&color=currentColor)
 ![Bootstrap](https://icongr.am/devicon/bootstrap-plain.svg?size=80&color=6916d0)
-![JavaScript](https://icongr.am/devicon/javascript-plain.svg?size=80&color=6916d0)
+![JavaScript](https://icongr.am/devicon/javascript-plain.svg?size=80&color=currentColor)
 
 ## Get Started
 
